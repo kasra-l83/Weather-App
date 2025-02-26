@@ -1,9 +1,10 @@
 import { Context } from "../App"
 import React, { useContext } from "react"
 import { IWeatherResDto } from "../types/weather"
+import { Map } from "./Map";
 
 export const WeatherData: React.FC<IWeatherResDto> = () =>{
-  const { getWeaData } = useContext(Context);
+  const { getWeaData, getLocData } = useContext(Context);
 
   return (
     <section className="grid grid-cols-2 px-2 gap-x-2 md:grid-cols-3">
@@ -22,7 +23,11 @@ export const WeatherData: React.FC<IWeatherResDto> = () =>{
           <h4>Visibility: {getWeaData ? `${getWeaData?.visibility}m` : "---"}</h4>
         </div>
       </div>
-      <div className="border-2 md:col-span-2"></div>
+      <div className="border-2 md:col-span-2">
+        {getLocData && (
+          <Map lat={getLocData?.results[0].geometry.lat} lng={getLocData?.results[0].geometry.lng}/>
+        )}
+      </div>
     </section>
   )
 }
