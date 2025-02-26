@@ -1,3 +1,4 @@
 export const urls= {
-    location: "/geocode/v1/json"
+    location: "/geocode/v1/json",
+    weather: "/weather?"
 }

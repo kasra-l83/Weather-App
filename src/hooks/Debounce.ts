@@ -7,7 +7,7 @@ export interface IUseDebounce {
 
 export const useDebounce= ({ orgValue, timeout= 1000 }: IUseDebounce) =>{
   const [value, setValue]= React.useState<string>("");
-  const timeoutRef= React.useRef<number>();
+  const timeoutRef= React.useRef<number>(0);
 
   React.useEffect(() =>{
     if (timeoutRef.current) {

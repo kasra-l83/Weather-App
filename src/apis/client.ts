@@ -1,9 +1,12 @@
 import axios from "axios"
 
-const serverUrl= "https://api.opencagedata.com";
-
-export const generateClient= () =>{
+export const locationUrl= () =>{
     return axios.create({
-        baseURL: serverUrl
+        baseURL: "https://api.opencagedata.com"
+    })
+}
+export const weatherUrl= () =>{
+    return axios.create({
+      baseURL: "https://api.openweathermap.org/data/2.5"
     })
 }
