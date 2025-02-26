@@ -1,8 +1,8 @@
-import React from "react";
+import React from "react"
 
 export interface IUseDebounce {
-  orgValue: string;
-  timeout: number;
+  timeout: number
+  orgValue: string
 }
 
 export const useDebounce= ({ orgValue, timeout= 1000 }: IUseDebounce) =>{
@@ -14,9 +14,9 @@ export const useDebounce= ({ orgValue, timeout= 1000 }: IUseDebounce) =>{
       clearTimeout(timeoutRef.current);
     }
 
-    timeoutRef.current = setTimeout(() =>{
+    timeoutRef.current= setTimeout(() =>{
       setValue(orgValue);
-    }, timeout);
+    }, timeout)
 
     return () =>{
       clearTimeout(timeoutRef.current);

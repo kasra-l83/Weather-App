@@ -17,14 +17,13 @@ export const SearchInput: React.FC = () => {
     locationSubmitHandler(debounceValue);
   }, [debounceValue])
 
-    return (
-        <input
-            required
-            type="search"
-            value={value}
-            onChange={onChangeHandler}
-            placeholder="Search for city or countary"
-            className="rounded max-w-[700px] w-full h-10 px-2"
-        />
-    )
+  return (
+    <input
+      type="search"
+      value={value}
+      onChange={onChangeHandler}
+      placeholder="Search for city or country"
+      className="rounded max-w-[700px] w-full h-10 px-2"
+    />
+  )
 }
